@@ -1,0 +1,107 @@
+[
+  {
+    "file": "branding/mumu-logo-primary.png",
+    "width": 2172,
+    "height": 724,
+    "mode": "RGBA",
+    "has_alpha_channel": true
+  },
+  {
+    "file": "branding/mumu-logo-navy-master.png",
+    "width": 1774,
+    "height": 887,
+    "mode": "RGB",
+    "has_alpha_channel": false
+  },
+  {
+    "file": "branding/mumu-symbol-favicon-source.png",
+    "width": 1254,
+    "height": 1254,
+    "mode": "RGBA",
+    "has_alpha_channel": true
+  },
+  {
+    "file": "heroes/mumu-hero-desktop.png",
+    "width": 1536,
+    "height": 1024,
+    "mode": "RGB",
+    "has_alpha_channel": false
+  },
+  {
+    "file": "heroes/mumu-hero-mobile.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGB",
+    "has_alpha_channel": false
+  },
+  {
+    "file": "heroes/mumu-hero-alternative.png",
+    "width": 1536,
+    "height": 1024,
+    "mode": "RGB",
+    "has_alpha_channel": false
+  },
+  {
+    "file": "products/mumu-ice-bag-concept.png",
+    "width": 1024,
+    "height": 1536,
+    "mode": "RGBA",
+    "has_alpha_channel": true
+  },
+  {
+    "file": "products/mumu-bulk-bags-concept.png",
+    "width": 1536,
+    "height": 1024,
+    "mode": "RGB",
+    "has_alpha_channel": false
+  },
+  {
+    "file": "lifestyle/mumu-lime-drink.png",
+    "width": 1536,
+    "height": 1024,
+    "mode": "RGB",
+    "has_alpha_channel": false
+  },
+  {
+    "file": "lifestyle/mumu-party-ice-bucket.png",
+    "width": 1536,
+    "height": 1024,
+    "mode": "RGB",
+    "has_alpha_channel": false
+  },
+  {
+    "file": "cutouts/mumu-ice-cluster.png",
+    "width": 1536,
+    "height": 1024,
+    "mode": "RGBA",
+    "has_alpha_channel": true
+  },
+  {
+    "file": "cutouts/mumu-floating-ice.png",
+    "width": 1254,
+    "height": 1254,
+    "mode": "RGBA",
+    "has_alpha_channel": true
+  },
+  {
+    "file": "social/mumu-stay-cool-cover.png",
+    "width": 1122,
+    "height": 1402,
+    "mode": "RGB",
+    "has_alpha_channel": false
+  },
+  {
+    "file": "drafts-not-for-use/mumu-white-logo-attempt-1.png",
+    "width": 2172,
+    "height": 724,
+    "mode": "RGBA",
+    "has_alpha_channel": true
+  },
+  {
+    "file": "drafts-not-for-use/mumu-white-logo-attempt-2.png",
+    "width": 2172,
+    "height": 724,
+    "mode": "RGBA",
+    "has_alpha_channel": true
+  }
+]

@@ -47,19 +47,17 @@ for (const [width, height] of [[360, 780], [390, 844], [768, 900], [1440, 900]])
     await page.keyboard.press('Escape')
     metrics.escapeClosedMenu = await page.getByRole('button', { name: 'Open menu' }).getAttribute('aria-expanded')
     await menu.click()
-    await page.getByRole('navigation', { name: 'Main navigation' }).getByText('Occasions').click()
-    await page.waitForFunction(() => Math.abs(document.querySelector('#occasions').getBoundingClientRect().top - 64) < 3)
+    await page.getByRole('navigation', { name: 'Main navigation' }).getByText('Our Ice').click()
+    await page.waitForFunction(() => Math.abs(document.querySelector('#the-ice').getBoundingClientRect().top - 64) < 3)
     metrics.menuLinkHash = new URL(page.url()).hash
     metrics.menuClosed = await page.getByRole('button', { name: 'Open menu' }).getAttribute('aria-expanded')
-    metrics.occasionsTargetTop = Math.round(await page.locator('#occasions').evaluate(el => el.getBoundingClientRect().top))
-    await page.getByRole('link', { name: /Explore the ice/i }).first().click()
-    await page.waitForFunction(() => Math.abs(document.querySelector('#the-ice').getBoundingClientRect().top - 64) < 3)
-    metrics.primaryHash = new URL(page.url()).hash
     metrics.productTargetTop = Math.round(await page.locator('#the-ice').evaluate(el => el.getBoundingClientRect().top))
+    await page.locator('.hero .button').click()
+    metrics.primaryPath = new URL(page.url()).pathname
   }
   results.push({ width, height, ...metrics, errors })
   if (metrics.document > metrics.viewport || metrics.brokenImages.length || errors.length || metrics.primaryButtonBottom > height || !metrics.headerTransparentAtTop) throw new Error(`Responsive verification failed at ${width}px`)
-  if (width <= 390 && (metrics.menuOpened !== 'true' || metrics.escapeClosedMenu !== 'false' || metrics.menuClosed !== 'false' || metrics.firstKeyboardFocus !== 'Skip to content' || metrics.primaryHash !== '#the-ice' || metrics.menuLinkHash !== '#occasions')) throw new Error(`Navigation verification failed at ${width}px`)
+  if (width <= 390 && (metrics.menuOpened !== 'true' || metrics.escapeClosedMenu !== 'false' || metrics.menuClosed !== 'false' || metrics.firstKeyboardFocus !== 'Skip to content' || metrics.primaryPath !== '/order' || metrics.menuLinkHash !== '#the-ice')) throw new Error(`Navigation verification failed at ${width}px`)
   await context.close()
 }
 

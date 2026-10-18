@@ -3,3 +3,5 @@ dist/
 *.tsbuildinfo
 .DS_Store
 Mumu_Ice_Concept_Assets/drafts-not-for-use/
+review-*.png
+12ui-improve-interface/

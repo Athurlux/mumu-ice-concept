@@ -2,6 +2,8 @@
 
 A responsive, single-page portfolio concept built with React, TypeScript, and Vite. It uses the supplied concept artwork and keeps all visible copy as HTML. This is not an official Mumu Ice website or an ordering system.
 
+See [IMPLEMENTATION_REPORT.md](IMPLEMENTATION_REPORT.md) for the delivered scope, verification, and suggested next steps.
+
 ## Run locally
 
 ```bash

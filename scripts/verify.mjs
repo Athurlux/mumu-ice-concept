@@ -1,7 +1,8 @@
 import { chromium } from 'playwright'
 
 const browser = await chromium.launch({ headless: true, executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe', args: ['--disable-gpu'] })
-const origin = 'http://127.0.0.1:4173/'
+const origin = process.env.MUMU_VERIFY_URL || 'http://127.0.0.1:4173/'
+const captureScreenshots = !process.env.MUMU_VERIFY_URL
 const results = []
 
 for (const [width, height] of [[360, 780], [390, 844], [768, 900], [1440, 900]]) {
@@ -31,12 +32,12 @@ for (const [width, height] of [[360, 780], [390, 844], [768, 900], [1440, 900]])
     brokenImages: [...document.images].filter(img => !img.complete || img.naturalWidth === 0).map(img => img.src),
     loadedHero: document.querySelector('.hero__picture img').currentSrc,
   }))
-  if (width === 1440 || width === 390) {
+  if (captureScreenshots && (width === 1440 || width === 390)) {
     const filename = width === 1440 ? 'desktop-full.png' : 'mobile-full.png'
     await page.screenshot({ path: filename, fullPage: true, animations: 'disabled' })
   }
-  if (width === 768) await page.screenshot({ path: 'tablet-768.png', animations: 'disabled' })
-  if (width === 360) await page.screenshot({ path: 'mobile-360.png', animations: 'disabled' })
+  if (captureScreenshots && width === 768) await page.screenshot({ path: 'tablet-768.png', animations: 'disabled' })
+  if (captureScreenshots && width === 360) await page.screenshot({ path: 'mobile-360.png', animations: 'disabled' })
   if (width <= 390) {
     await page.keyboard.press('Tab')
     metrics.firstKeyboardFocus = await page.evaluate(() => document.activeElement?.textContent?.trim())
